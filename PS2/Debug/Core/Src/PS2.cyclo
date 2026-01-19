@@ -1,0 +1,9 @@
+../Core/Src/PS2.c:13:6:delay_us	2
+../Core/Src/PS2.c:20:9:PS2_SendByte	4
+../Core/Src/PS2.c:48:6:PS2_Cmd	2
+../Core/Src/PS2.c:60:6:PS2_Poll	1
+../Core/Src/PS2.c:67:6:PS2_EnterConfig	1
+../Core/Src/PS2.c:74:6:PS2_AnalogMode	1
+../Core/Src/PS2.c:81:6:PS2_ExitConfig	1
+../Core/Src/PS2.c:88:6:PS2_Init	1
+../Core/Src/PS2.c:101:6:PS2_Update	4
