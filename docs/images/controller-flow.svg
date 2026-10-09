@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">PS2 controller input and STM32 demo</title><desc id="desc">PS2 receiver ATT, CLK, DAT and CMD connect to STM32F103 PA4, PA5, PA6 and PA7. TIM1 drives microsecond bit-bang timing. The driver reads mode and active-low buttons, optionally analog axes, and the demo toggles PC13 for UP or DOWN. Invalid frames retain state, so robot integration needs validity and timeout handling.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6Z" fill="#078b84"/></marker></defs>
+<rect width="1200" height="675" rx="24" fill="#f4f8fb"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#16314d">
+<text x="48" y="58" font-size="32" font-weight="700">PS2 / Controller input to STM32</text><text x="48" y="92" font-size="20" fill="#547086">GPIO transport - timer-backed polling - decoded application state</text>
+<rect x="48" y="130" width="320" height="260" rx="18" fill="#16314d"/><text x="208" y="177" text-anchor="middle" font-size="27" fill="white" font-weight="700">PS2 receiver</text>
+<g fill="#ccefeb" font-size="23"><text x="82" y="226">ATT / select</text><text x="82" y="266">CLK</text><text x="82" y="306">DAT / output</text><text x="82" y="346">CMD / input</text></g>
+<rect x="825" y="130" width="327" height="260" rx="18" fill="#16314d"/><text x="988" y="177" text-anchor="middle" font-size="27" fill="white" font-weight="700">STM32F103</text>
+<g fill="#ccefeb" font-size="23"><text x="859" y="226">PA4 / SS</text><text x="859" y="266">PA5 / SCK</text><text x="859" y="306">PA6 / MISO</text><text x="859" y="346">PA7 / MOSI</text></g>
+<g stroke="#078b84" stroke-width="4" marker-end="url(#a)"><path d="M815 220 H378"/><path d="M815 260 H378"/><path d="M378 300 H815"/><path d="M815 340 H378"/></g>
+<rect x="452" y="171" width="292" height="37" rx="8" fill="#f4f8fb"/><text x="598" y="198" text-anchor="middle" font-size="22" font-weight="600">LSB first / 8 us delays</text>
+<text x="598" y="375" text-anchor="middle" font-size="20" fill="#547086">TIM1 counter: 1 MHz in this project</text>
+<rect x="48" y="420" width="1104" height="164" rx="18" fill="white" stroke="#d7e3ea" stroke-width="2"/>
+<g fill="#e7f6f3" stroke="#acd7cf"><rect x="76" y="449" width="284" height="81" rx="12"/><rect x="406" y="449" width="331" height="81" rx="12"/><rect x="783" y="449" width="339" height="81" rx="12"/></g>
+<g text-anchor="middle"><g font-size="23" font-weight="600"><text x="218" y="482">Poll / 0x01, 0x42</text><text x="571" y="482">PS2Buttons structure</text><text x="952" y="482">Demo / PC13 LED</text></g><g font-size="19" fill="#547086"><text x="218" y="510">Mode 0x41 or 0x73</text><text x="571" y="510">16 buttons + 4 analog axes</text><text x="952" y="510">Toggle while UP or DOWN held</text></g></g>
+<g stroke="#078b84" stroke-width="3" marker-end="url(#a)"><path d="M368 490 H396"/><path d="M745 490 H773"/></g>
+<text x="76" y="561" font-size="19" fill="#547086">Invalid frames retain state. Add validity and timeout handling when integrating robot motion.</text>
+<text x="48" y="634" font-size="19" fill="#547086">Source: PS2/Core/Src/PS2.c, main.c and Core/Inc/main.h</text>
+</g></svg>
